@@ -5,6 +5,26 @@ import java.util.Scanner;
 
 public class App {
 
+    public static int checkDigit(int[] arr){
+        int checkDigit = 0;
+        int sum = 0;
+
+        for (int i = 0; i <= arr.length-1; i++){
+            sum += (i+2) * arr[i];
+            checkDigit = 11 - (sum % 11);
+        }
+        switch (checkDigit){
+            case 10:
+                checkDigit = 0;
+                break;
+            case 11:
+                checkDigit = 5;
+                break;
+        }
+        return checkDigit;
+    }
+
+
     public static boolean swapArrays(int[] array1, int[] array2){
         int[] tempArray = new int[array1.length];
         if(array1.length == array2.length){
@@ -79,6 +99,7 @@ public class App {
     }
 
     public static void main(String[] args) {
-        // Scanner sc = new Scanner(System.in);
+        int[] arr = {3, 9, 1, 5, 8};
+        checkDigit(arr);
     }
 }
