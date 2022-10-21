@@ -5,23 +5,30 @@ import java.util.Scanner;
 
 public class App {
 
-    public static void oneMonthCalendar(int days, int start) {
-        System.out.println(days);
-        System.out.println(start);
-        int []numbers = {2, 3, 5, 6};
-        int []numbers2 = new int[10];
-        numbers2[0] = 6;
-        numbers2[1] = 4;
-
-        numbers2[9] = 9;
-        for (int i = 0; i < numbers2.length; i++){
-            System.out.println(numbers2[i]);
-        }
-    }
-
     public static long[] lcg(long seed){
         long[] randomNumbers;
         return null;
+    }
+
+    public static void oneMonthCalendar(int days, int start) {
+        int n = 1;
+        for (int i = 1; start > i && start != 1; i++) {
+            System.out.print("   ");
+            n++;
+        }
+        for (int j = 1; j <= days; j++) {
+            if (j < 10){
+                System.out.print(" " + j + " ");
+            } else {
+                System.out.print(j + " ");
+            }
+            n++;
+            if (n == 8){
+                System.out.println();
+                n = 1;
+            }
+        }
+        System.out.println();
     }
 
     public static void main(String[] args) {
