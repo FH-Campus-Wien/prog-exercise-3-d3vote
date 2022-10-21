@@ -5,6 +5,20 @@ import java.util.Scanner;
 
 public class App {
 
+    public static long[] lcg(long seed){
+        long[] randomNumbers = new long[10];
+        int m = 2147483647;
+        int c = 12345;
+        int a = 1103515245;
+
+        for (int i = 0; randomNumbers.length > i; i++){
+            seed = (a * seed + c) % (m+1);
+            randomNumbers[i] = seed;
+        }
+
+        return randomNumbers;
+    }
+
     public static void oneMonthCalendar(int days, int start) {
         int n = 1;
         for (int i = 1; start > i && start != 1; i++) {
@@ -26,16 +40,8 @@ public class App {
         System.out.println();
     }
 
-    public static long[] lcg(long seed){
-        long[] randomNumbers;
-        return null;
-    }
-
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int days = sc.nextInt();
-        int start = sc.nextInt();
-        oneMonthCalendar(days, start);
-        long[] randomNumbers = lcg(0);
+        // Scanner sc = new Scanner(System.in);
+        long[] randomNumbers = lcg(1000);
     }
 }
