@@ -5,10 +5,23 @@ import java.util.Scanner;
 
 public class App {
 
+    public static boolean swapArrays(int[] array1, int[] array2){
+        int[] tempArray = new int[array1.length];
+        if(array1.length == array2.length){
+            for (int i = 0; i < array1.length; i++){
+                tempArray[i] = array1[i];
+                array1[i] = array2[i];
+                array2[i] = tempArray[i];
+            }
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public static int randomNumberBetweenOneAndHundred(){
         Random num = new Random();
-        int randomInt = num.nextInt(100) + 1; // Quelle: https://stackoverflow.com/questions/7642656/how-to-get-a-random-between-1-100-from-randdouble-in-java
-        return randomInt;
+        return num.nextInt(100) + 1;
     }
 
     public static void guessingGame(int numberToGuess){
@@ -46,7 +59,7 @@ public class App {
 
     public static void oneMonthCalendar(int days, int start) {
         int n = 1;
-        for (int i = 1; start > i && start != 1; i++) {
+        for (int i = 1; start > i; i++) {
             System.out.print("   ");
             n++;
         }
