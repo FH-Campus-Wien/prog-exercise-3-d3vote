@@ -79,6 +79,8 @@ public class App {
 
     public static void oneMonthCalendar(int days, int start) {
         int n = 1;
+        int row = 1;
+        int count = 0;
         for (int i = 1; start > i; i++) {
             System.out.print("   ");
             n++;
@@ -89,14 +91,18 @@ public class App {
             } else {
                 System.out.print(j + " ");
             }
+            count++;
             n++;
             if (n == 8){
-                System.out.println();
+                row++;
                 n = 1;
+                System.out.println();
+            }
+            if (row == 5 && count == days) {
+                System.out.println();
             }
         }
-        System.out.println();
-    }
+   }
 
     public static void main(String[] args) {
         int[] arr = {3, 9, 1, 5, 8};
