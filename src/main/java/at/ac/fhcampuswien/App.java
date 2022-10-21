@@ -5,6 +5,12 @@ import java.util.Scanner;
 
 public class App {
 
+    public static int randomNumberBetweenOneAndHundred(){
+        Random num = new Random();
+        int randomInt = num.nextInt(100) + 1; // Quelle: https://stackoverflow.com/questions/7642656/how-to-get-a-random-between-1-100-from-randdouble-in-java
+        return randomInt;
+    }
+
     public static void guessingGame(int numberToGuess){
         Scanner sc = new Scanner(System.in);
         for (int i = 1; i <= 10; i++){
