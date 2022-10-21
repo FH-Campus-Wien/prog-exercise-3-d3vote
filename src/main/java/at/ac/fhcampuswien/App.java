@@ -5,11 +5,6 @@ import java.util.Scanner;
 
 public class App {
 
-    public static long[] lcg(long seed){
-        long[] randomNumbers;
-        return null;
-    }
-
     public static void oneMonthCalendar(int days, int start) {
         int n = 1;
         for (int i = 1; start > i && start != 1; i++) {
@@ -29,6 +24,11 @@ public class App {
             }
         }
         System.out.println();
+    }
+
+    public static long[] lcg(long seed){
+        long[] randomNumbers;
+        return null;
     }
 
     public static void main(String[] args) {
