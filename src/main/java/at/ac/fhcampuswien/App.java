@@ -5,6 +5,25 @@ import java.util.Scanner;
 
 public class App {
 
+    public static void guessingGame(int numberToGuess){
+        Scanner sc = new Scanner(System.in);
+        for (int i = 1; i <= 10; i++){
+            System.out.print("Guess number "+ i + ": ");
+            int guess = sc.nextInt();
+            if (guess > numberToGuess && i < 10){
+                System.out.println("The number AI picked is lower than your guess.");
+            } else if (guess < numberToGuess && i < 10){
+                System.out.println("The number AI picked is higher than your guess.");
+            } else if (guess == numberToGuess && i < 10){
+                System.out.println("You won wisenheimer!");
+                break;
+            } else if (guess != numberToGuess) {
+                System.out.println("You lost! Have you ever heard of divide & conquer?");
+                break;
+            }
+        }
+    }
+
     public static long[] lcg(long seed){
         long[] randomNumbers = new long[10];
         int m = 2147483647;
@@ -42,6 +61,5 @@ public class App {
 
     public static void main(String[] args) {
         // Scanner sc = new Scanner(System.in);
-        long[] randomNumbers = lcg(1000);
     }
 }
